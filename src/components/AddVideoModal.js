@@ -94,14 +94,14 @@ export default function AddVideoModal() {
                                 {...register("thumbnailUrl", { required: true })}
                                 placeholder="Enter thumbnail URL"
                             />
-                            <Text mt={2}>Embed VIDEO_ID:</Text>
+                            <Text mt={2}>Embed youtube VIDEO_ID:</Text>
                             {
                                 errors.embedID &&
                                 requiredMessage
                             }
                             <Input
                                 {...register("embedID", { required: true })}
-                                placeholder="Enter VIDEO_ID to embed video"
+                                placeholder="Enter 'xxxx' from https://www.youtube.com/embed/xxxx"
                             />
                             <Text mt={2}>Category :</Text>
                             {
