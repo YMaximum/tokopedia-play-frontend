@@ -90,7 +90,7 @@ https://gg3yassar-tokopedia-play-fe.vercel.app/
     ```bash
     "proxy": "http://localhost:YOUR_BACKEND_PORT"
     ```
-    to your `package.json`. Change `YOUR_BACKEND_PORT` with your defined port for running backend server. Ff you run your backend server at port `3080` then you can write it as below:
+    to your `package.json`. Change `YOUR_BACKEND_PORT` with your defined port for running backend server. If you run your backend server at port `3080` then you can write it as below:
     ```bash
     "proxy": "http://localhost:3080"
     ```
