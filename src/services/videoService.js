@@ -1,8 +1,9 @@
 import axios from 'axios';
+const beUrl = process.env.REACT_APP_BACKEND_URL
 
 export async function getVideos() {
     try {
-        const response = await axios.get('/api/videos');
+        const response = await axios.get(`${beUrl}/api/videos`);
         return await response.data;
     }
     catch (e) {
@@ -18,7 +19,7 @@ export async function addVideo(data) {
         }
     }
     try {
-        const response = await axios.post('/api/videos', postData, config);
+        const response = await axios.post(`${beUrl}/api/videos`, postData, config);
     }
     catch (e) {
         console.log('Error:', e.message);
@@ -27,7 +28,7 @@ export async function addVideo(data) {
 
 export async function groupVideos(groupBy) {
     try {
-        const response = await axios.get(`/api/videos/group/${groupBy}`);
+        const response = await axios.get(`${beUrl}/api/videos/group/${groupBy}`);
         return await response.data;
     }
     catch (e) {
@@ -37,7 +38,7 @@ export async function groupVideos(groupBy) {
 
 export async function deleteVideo (data) {
     try {
-        const response = await axios.delete(`/api/videos/${data.videoID}`);
+        const response = await axios.delete(`${beUrl}/api/videos/${data.videoID}`);
     }
     catch (e) {
         console.log('Error:', e.message);

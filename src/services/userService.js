@@ -1,4 +1,5 @@
 import axios from 'axios';
+const beUrl = process.env.REACT_APP_BACKEND_URL
 
 
 export async function loginUser(data) {
@@ -9,7 +10,7 @@ export async function loginUser(data) {
         }
     }
     try {
-        const response = await axios.post('/api/videos/login', postData, config);
+        const response = await axios.post(`${beUrl}/api/videos/login`, postData, config);
         if (response.status === 200) {
             localStorage.setItem('USERNAME', response.data.username);
             return true;
@@ -31,7 +32,7 @@ export async function registerUser(data) {
         }
     }
     try {
-        const response = await axios.post('/api/videos/register', postData, config);
+        const response = await axios.post(`${beUrl}/api/videos/register`, postData, config);
         console.log(response);
         if (response.status === 201) {
             localStorage.setItem('USERNAME', response.data.username);

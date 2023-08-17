@@ -1,8 +1,9 @@
 import axios from 'axios';
+const beUrl = process.env.REACT_APP_BACKEND_URL
 
 export async function getComments(videoID) {
     try {
-        const response = await axios.get(`/api/videos/${videoID}/comments`);
+        const response = await axios.get(`${beUrl}/api/videos/${videoID}/comments`);
         return await response.data;
     }
     catch (e) {
@@ -19,7 +20,7 @@ export async function addComment(videoID, data) {
         }
     }
     try {
-        const response = await axios.post(`/api/videos/${videoID}/comments`, postData, config);
+        const response = await axios.post(`${beUrl}/api/videos/${videoID}/comments`, postData, config);
     }
     catch (e) {
         console.log('Error:', e.message);
