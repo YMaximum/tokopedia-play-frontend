@@ -19,7 +19,7 @@ export async function addProduct(data) {
         }
     }
     try {
-        const response = await axios.post(`${beUrl}/api/videos/${data.videoID}/products`, postData, config);
+        await axios.post(`${beUrl}/api/videos/${data.videoID}/products`, postData, config);
     }
     catch (e) {
         console.log('Error:', e.message);

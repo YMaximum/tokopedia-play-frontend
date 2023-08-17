@@ -11,8 +11,7 @@ import {
     Flex,
 } from "@chakra-ui/react";
 import React, {
-    useEffect,
-    useState
+    useEffect
 } from "react";
 import {
     useParams

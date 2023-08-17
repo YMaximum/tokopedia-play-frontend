@@ -16,13 +16,11 @@ import {
 
 export default function CommentForm({ videoID }) {
     const {
-        setIsFetchDetail,
-        setIsLoading
+        setIsFetchDetail
     } = useMyContext();
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
         reset
     } = useForm();

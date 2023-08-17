@@ -30,7 +30,6 @@ export default function AddVideoModal() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
         reset
     } = useForm();

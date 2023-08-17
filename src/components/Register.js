@@ -1,4 +1,4 @@
-import Reactb from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form"
 import { registerUser } from '../services/userService';
 import { useMyContext } from "./MyContextProvider";
@@ -13,25 +13,18 @@ import {
     Button,
     useDisclosure,
     Input,
-    Text,
-    Select,
-    InputGroup,
-    InputLeftAddon
+    Text
 } from '@chakra-ui/react'
 
 
 export default function Register() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const {
-        isFetchDetail,
-        setIsFetchDetail,
-        setIsLoading,
-        videos
+        setIsLoading
     } = useMyContext();
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
         reset
     } = useForm();

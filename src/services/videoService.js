@@ -19,7 +19,7 @@ export async function addVideo(data) {
         }
     }
     try {
-        const response = await axios.post(`${beUrl}/api/videos`, postData, config);
+        await axios.post(`${beUrl}/api/videos`, postData, config);
     }
     catch (e) {
         console.log('Error:', e.message);
@@ -38,7 +38,7 @@ export async function groupVideos(groupBy) {
 
 export async function deleteVideo (data) {
     try {
-        const response = await axios.delete(`${beUrl}/api/videos/${data.videoID}`);
+        await axios.delete(`${beUrl}/api/videos/${data.videoID}`);
     }
     catch (e) {
         console.log('Error:', e.message);

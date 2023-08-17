@@ -1,6 +1,4 @@
-import React, {
-    useState
-} from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form"
 import { deleteVideo } from '../services/videoService';
 import { useMyContext } from "./MyContextProvider";
@@ -14,12 +12,8 @@ import {
     ModalCloseButton,
     Button,
     useDisclosure,
-    Input,
     Text,
     Select,
-    InputGroup,
-    InputLeftAddon,
-    Menuitem,
     MenuItem
 } from '@chakra-ui/react'
 import {
@@ -30,8 +24,6 @@ import {
 export default function DeleteVideoModal() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const {
-        isFetchDetail,
-        setIsFetchDetail,
         videos,
         setIsLoading
     } = useMyContext();

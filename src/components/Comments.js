@@ -1,27 +1,14 @@
-import React, {
-    useEffect
-} from 'react';
-import { getComments } from '../services/commentService';
+import React from 'react';
 import { useMyContext } from './MyContextProvider';
 import {
     Box,
     Card,
-    CardHeader,
     CardBody,
-    CardFooter,
     Heading,
     Text,
     Flex,
-    Avatar,
-    IconButton,
-    Image,
-    Button,
-    AspectRatio
+    Avatar
 } from "@chakra-ui/react";
-import { BsThreeDotsVertical } from "react-icons/bs";
-
-
-
 
 export default function Comments({ videoID }) {
     const {
@@ -38,7 +25,7 @@ export default function Comments({ videoID }) {
             return [];
         }
     }
-    
+
     const filteredComments = filterByVideoID(videoID);
 
     const mappedComment = filteredComments.map((data) => (
@@ -64,7 +51,6 @@ export default function Comments({ videoID }) {
                             />
                             <Box>
                                 <Heading size={['sm', 'sm', 'md']}>{data.username}</Heading>
-                                <Text fontSize={['xs', 'sm', 'md']}>Creator</Text>
                             </Box>
                         </Flex>
                     </Flex>

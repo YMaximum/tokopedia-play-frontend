@@ -2,22 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
     Card,
-    CardHeader,
     CardBody,
-    CardFooter,
     Image,
     Stack,
-    Heading,
     Text,
-    Divider,
-    ButtonGroup,
-    Button,
     Box,
     Flex
 } from '@chakra-ui/react';
-import {
-    RiShoppingBasket2Fill
-} from 'react-icons/ri'
 import {
     LiaShoppingCartSolid
 } from 'react-icons/lia'

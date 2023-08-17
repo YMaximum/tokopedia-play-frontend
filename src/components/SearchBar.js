@@ -1,8 +1,5 @@
 import React from "react"
 import {
-    useMyContext
-} from './MyContextProvider';
-import {
     useForm
 } from "react-hook-form"
 import {
@@ -12,8 +9,6 @@ import {
     InputRightAddon,
     Button,
     FormControl,
-    FormErrorMessage,
-    Text,
     Tooltip
 } from '@chakra-ui/react'
 import {
@@ -30,9 +25,7 @@ export default function SearchBar() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
-        reset
     } = useForm();
 
     const onSubmit = (data) => {

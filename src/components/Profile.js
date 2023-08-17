@@ -6,15 +6,12 @@ import { useMyContext } from './MyContextProvider';
 import { logoutUser } from '../services/userService';
 import {
     Avatar,
-    Box,
-    Text,
     Flex,
     Heading,
     Menu,
     MenuButton,
     MenuList,
-    MenuItem,
-    Button
+    MenuItem
 } from '@chakra-ui/react'
 
 export default function Profile() {

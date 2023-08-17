@@ -9,38 +9,21 @@ import SideBar from './SideBar';
 import Login from './Login';
 import Register from './Register';
 import Profile from './Profile';
-import { useMyContext } from './MyContextProvider';
-import { logoutUser } from '../services/userService';
 import {
     Box,
-    Button,
-    Container,
-    Text,
     Flex,
     Heading,
-    Spacer,
-    ButtonGroup,
-    Input,
-    InputGroup,
-    InputRightElement,
-    InputRightAddon
+    ButtonGroup
 } from '@chakra-ui/react'
-import {
-    BsSearch
-} from 'react-icons/bs'
 import {
     Link
 } from 'react-router-dom';
-import {
-    GiHamburgerMenu
-} from 'react-icons/gi'
 import {
     motion
 } from 'framer-motion'
 
 
 export default function Navbar() {
-    const { setIsLoading } = useMyContext();
     const [scrolled, setScrolled] = useState(false);
 
     const handleScroll = () => {

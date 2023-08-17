@@ -9,7 +9,6 @@ import {
     useLocation
 } from 'react-router-dom'
 import {
-    Text,
     Box
 } from '@chakra-ui/react'
 

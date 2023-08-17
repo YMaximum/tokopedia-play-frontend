@@ -20,7 +20,7 @@ export async function addComment(videoID, data) {
         }
     }
     try {
-        const response = await axios.post(`${beUrl}/api/videos/${videoID}/comments`, postData, config);
+        await axios.post(`${beUrl}/api/videos/${videoID}/comments`, postData, config);
     }
     catch (e) {
         console.log('Error:', e.message);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Center, Spinner } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
