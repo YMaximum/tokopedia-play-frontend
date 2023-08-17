@@ -1,6 +1,4 @@
-import React, {
-    useState
-} from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form"
 import { addProduct } from '../services/productService';
 import { useMyContext } from "./MyContextProvider";
@@ -19,7 +17,6 @@ import {
     Select,
     InputGroup,
     InputLeftAddon,
-    Menuitem,
     MenuItem
 } from '@chakra-ui/react'
 import {
@@ -30,14 +27,12 @@ import {
 export default function AddProductModal() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const {
-        isFetchDetail,
         setIsFetchDetail,
         videos
     } = useMyContext();
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
         reset
     } = useForm();
@@ -59,7 +54,20 @@ export default function AddProductModal() {
         </Text>
     ]
 
-    const mappedVideoOption = videos.map((data, i) => (
+    const filterByUploader = (condition) => {
+        try {
+            const videoById = videos.filter(vid => vid.uploader === condition);
+            return videoById;
+        }
+        catch (e) {
+            console.log(`No video uploaded by ${condition} :::`, e.message)
+            return [];
+        }
+    }
+
+    const filteredVideos = filterByUploader(localStorage.getItem('USERNAME'));
+
+    const mappedVideoOption = filteredVideos.map((data, i) => (
         <option key={i} value={data._id}>{data.title}</option>
     ))
 
@@ -68,7 +76,7 @@ export default function AddProductModal() {
             <MenuItem
                 onClick={onOpen}
                 size={['xs', 'sm', 'md']}
-                icon={<BiCartAdd/>}
+                icon={<BiCartAdd />}
             >
                 Add Product
             </MenuItem>
